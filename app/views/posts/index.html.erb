@@ -1,0 +1,10 @@
+<% if @posts.none? %>
+  No posts yet
+<% else %>
+  <% @posts.each do |post| %>
+    <h2><%= post.title %></h2>
+    <p><%= post.description %></p>
+  <% end %>
+<% end %>
+
+<%= link_to 'New post', new_post_path %>
