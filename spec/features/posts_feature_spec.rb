@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe 'posts' do
   context 'no posts' do
@@ -30,5 +30,18 @@ describe 'creating posts' do
 
     expect(current_path).to eq posts_path
     expect(page).to have_content 'My new post'
+    expect(page).not_to have_css 'img.uploaded-pic'
+  end
+
+  it 'can add a photo to our posts' do
+    visit '/posts/new'
+    fill_in 'Title', with: 'My new post'
+    fill_in 'Description', with: 'Lorem ipsum'
+    attach_file 'Image', Rails.root.join('spec/images/old-man1.jpg')
+
+    click_button 'Post it!'
+
+    expect(current_path).to eq posts_path
+    expect(page).to have_css 'img.uploaded-pic'
   end
 end

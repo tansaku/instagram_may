@@ -2,6 +2,11 @@
   No posts yet
 <% else %>
   <% @posts.each do |post| %>
+
+    <% if post.image.present? %>
+      <%= image_tag post.image.url(:thumb), class: 'uploaded-pic' %>
+    <% end %>
+    
     <h2><%= post.title %></h2>
     <p><%= post.description %></p>
   <% end %>
