@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem "paperclip", github: 'thoughtbot/paperclip'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'aws-sdk'
 
 group :test, :development do
   gem 'rspec-rails'
