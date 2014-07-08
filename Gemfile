@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem "paperclip", github: 'thoughtbot/paperclip'
+gem 'devise'
+gem 'bootstrap-sass'
 
 group :test, :development do
   gem 'rspec-rails'
