@@ -27,11 +27,19 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem "paperclip", github: 'thoughtbot/paperclip'
+
+gem 'devise'
+gem 'bootstrap-sass'
 gem 'aws-sdk'
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 # Use ActiveModel has_secure_password
