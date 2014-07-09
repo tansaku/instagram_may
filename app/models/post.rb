@@ -22,4 +22,7 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def to_param
+    title
+  end
 end

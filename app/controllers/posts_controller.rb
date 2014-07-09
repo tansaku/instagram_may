@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def show
+    @post = Post.find_by_title params[:id]
+  end
+
   def index
     @posts = Post.all
   end
