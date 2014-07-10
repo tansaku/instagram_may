@@ -35,6 +35,8 @@ gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'database_cleaner'
+  gem 'poltergeist'
 end
 
 group :production do
