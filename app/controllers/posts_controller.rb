@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post].permit(:title, :description, :image, :tag_names))
+    @post = Post.new(params[:post].permit(:title, :description, :image, :tag_names, :address))
     @post.user = current_user
     @post.save!
 
@@ -18,6 +18,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 end
