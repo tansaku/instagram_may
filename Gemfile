@@ -33,6 +33,8 @@ gem 'bootstrap-sass'
 gem 'aws-sdk'
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
