@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
     styles: { thumb: '300x300>' },
     storage: :s3,
     s3_credentials: {
-      bucket: 'instagram_clone_may',
+      bucket: 'instagram_may_alex',
       access_key_id: Rails.application.secrets.s3_access_key,
       secret_access_key: Rails.application.secrets.s3_secret_key
     }
