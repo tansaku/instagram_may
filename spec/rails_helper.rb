@@ -19,6 +19,10 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+require 'aws'
+AWS.stub!
+AWS.config(:access_key_id => "TESTKEY", :secret_access_key => "TESTSECRET")
+
 RSpec.configure do |config|
   config.include Warden::Test::Helpers
   Warden.test_mode!
