@@ -14,7 +14,7 @@ describe 'users registration/login' do
   end
 
   it 'can sign in' do
-    User.create(email: 'alex@example.com', password: '12345678', password_confirmation: '12345678')
+    create(:user)
     visit '/users/sign_in'
 
     within '.new_user' do

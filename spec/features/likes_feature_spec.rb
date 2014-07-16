@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'liking posts' do
+  let(:alex) {create(:user)}
   before do
-    alex = User.create(email: 'alex@example.com', password: '12345678', password_confirmation: '12345678')
     alex.posts.create(title: 'Cool post', description: 'Hello world')
   end
 
@@ -11,9 +11,22 @@ describe 'liking posts' do
     expect(page).to have_link '❤ 0'
   end
 
-  it 'can be liked, incrementing the likes count', js: true do
+  xit 'can be liked, incrementing the likes count', js: true do
     visit '/posts'
     click_link '❤ 0'
+    sleep 2
     expect(page).to have_link '❤ 1'
   end
+
+  it 'can only be liked once per user', js:true do
+    login_as alex
+    visit '/posts'
+    click_link '❤ 0'
+    sleep 2
+    click_link '❤ 1'
+    sleep 2
+    expect(page).to have_link '❤ 1'
+  end
+
+
 end

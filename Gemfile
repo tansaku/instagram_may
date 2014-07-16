@@ -37,6 +37,9 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'websocket-rails'
 gem 'thin'
+gem 'launchy'
+
+gem 'factory_girl_rails'
 
 group :test, :development do
   gem 'rspec-rails'

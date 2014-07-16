@@ -2,9 +2,7 @@ require 'rails_helper'
 
 describe 'tagging posts' do
   context 'when logged in' do
-    let!(:alex) do
-      User.create(email: 'alex@example.com', password: '12345678', password_confirmation: '12345678')
-    end
+    let!(:alex) {create(:user)}
 
     before do
       login_as alex
