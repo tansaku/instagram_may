@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
     <title>InstagramMay</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <script src='http://maps.google.com/maps/api/js?sensor=true'></script>
-    <%= javascript_include_tag 'application' %>
+    
     <%= csrf_meta_tags %>
   </head>
 
@@ -51,5 +51,8 @@
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
       </footer>
     </div> <!-- /container -->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.min.js"></script>
+     <%= javascript_include_tag 'application' %>
   </body>
 </html>
